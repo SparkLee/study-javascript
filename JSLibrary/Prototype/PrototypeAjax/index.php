@@ -15,10 +15,12 @@ function doit() {
   {
     method:'get',
 	onSuccess: function(transport){
-	  var response = transport.responseText || "no response text";
-      alert("Success! \n\n" + response);
+	  var response = transport.responseText || "无响应内容";
+      alert("Ajax请求成功! \n\n" + response);
     },
-    onFailure: function(){ alert('Ajax请求失败') }
+    onFailure: function(){ 
+      alert('Ajax请求失败') 
+    }
   });
   
 }
