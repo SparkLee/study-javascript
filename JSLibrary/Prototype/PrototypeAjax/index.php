@@ -11,7 +11,7 @@
 <script src="http://prototypejs.org/assets/2008/9/29/prototype-1.6.0.3.js"></script>
 <script>
 function doit() {
-  new Ajax.Request('/some_url',
+  new Ajax.Request('/ajaxhandler.php',
   {
     method:'get',
 	onSuccess: function(transport){
