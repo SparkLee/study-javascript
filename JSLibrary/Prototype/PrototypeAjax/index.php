@@ -22,13 +22,26 @@ function doit() {
       alert('Ajax请求失败') 
     }
   });
-  
 }
+function doit2() {
+	  new Ajax.Request('/ajaxhandler2.php',
+	  {
+	    method:'get',
+	    parameters:{name:"威哥"},
+		onSuccess: function(transport){
+		  var response = transport.responseText || "无响应内容";
+	      alert("Ajax请求成功! \n\n" + response);
+	    },
+	    onFailure: function(){ 
+	      alert('Ajax请求失败') 
+	    }
+	  });
+	}
 </script>
 </head>
 
 <body>
 
-<input onClick="JavaScript:doit();" type="button" value="点击执行Ajax">
+<input onClick="JavaScript:doit2();" type="button" value="点击执行Ajax">
 </body>
 </html>
