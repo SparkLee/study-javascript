@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS键盘和鼠标事件</title>
+<script>
+var Spark = {};
+Spark.TextKeyDown = function(event) {
+	document.getElementById("div_down").innerHTML = 'hi, i am down:' + event.keyCode;
+	//return; //等于return;
+	//return false;
+	//document.getElementById("txt2").focus();
+}
+
+Spark.TextKeyUp = function() {
+	document.getElementById("div_up").innerHTML = Math.random();
+}
+</script>
+</head>
+
+<body>
+<textarea id="txt" cols="40" rows="5" onKeyDown="return Spark.TextKeyDown(event);" onKeyUp="JavaScript:Spark.TextKeyUp();"></textarea>
+<textarea id="txt2"></textarea>
+<div id="div_down"></div>
+<div id="div_up"></div>
+</body>
+</html>
