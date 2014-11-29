@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DataTable</title>
+<link href="http://spkjs.com/css/jquery.dataTables-1.10.4.min.css" rel="stylesheet">
+</head>
+<body>
+<table id="stuTable" class="display" cellspacing="0" width="100%">
+    <thead>
+    	<tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">HR Information</th>
+            <th colspan="3">Contact</th>
+        </tr>
+        <tr>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+ 
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </tfoot>
+ 
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+        </tr>
+        <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011/07/25</td>
+            <td>$170,750</td>
+        </tr>
+        <tr>
+            <td>Ashton Cox</td>
+            <td>Junior Technical Author</td>
+            <td>San Francisco</td>
+            <td>66</td>
+            <td>2009/01/12</td>
+            <td>$86,000</td>
+        </tr>
+        <tr>
+            <td>Cedric Kelly</td>
+            <td>Senior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td>22</td>
+            <td>2012/03/29</td>
+            <td>$433,060</td>
+        </tr>
+        <tr>
+            <td>Ashton Cox</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>33</td>
+            <td>2008/11/28</td>
+            <td>$162,700</td>
+        </tr>
+        <tr>
+            <td>Brielle Williamson</td>
+            <td>Integration Specialist</td>
+            <td>New York</td>
+            <td>61</td>
+            <td>2012/12/02</td>
+            <td>$372,000</td>
+        </tr>       
+    </tbody>
+</table>
+
+<script src="http://spkjs.com/js/jquery-1.11.1.min.js"></script>
+<script src="http://spkjs.com/js/jquery.dataTables-1.10.4.min.js"></script>	
+<script>
+$(document).ready(function(e) {
+    $('#stuTable').DataTable({
+	    "paging":   false, //隐藏分分页导航条
+		"ordering": false, //禁用列排序功能
+		"info":     false, //隐藏当前页/共页数
+		"order": [[ 0, "asc" ], [ 1, 'desc' ]],  //第1列正序排序，在此基础上第2列倒序排序
+		"language": { //自字义语言
+            "lengthMenu": "每页显示  _MENU_ 条记录",
+            "zeroRecords": "无任何记录",
+            "info": "当前第 _PAGE_ 页 / 共 _PAGES_ 页",
+            "infoEmpty": "无有效记录",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search": "搜索",
+        },
+		"columnDefs": [
+		   /*            
+           {
+               "targets": [ 1 ],  //隐藏第2列，但是会被搜索
+               "visible": false,
+               "searchable": true
+           },
+           {
+               "targets": [ 2 ],  //隐藏第3列，且不会被搜索
+               "visible": false
+           }
+           */
+        ]
+	});
+});
+</script>	
+</body>
+</html>
