@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>下拉级联菜单</title>
+<link rel="stylesheet" href="../../css/bootstrap-3.3.4.min.css">
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">请仔细填写收货地址</h3>
+		</div>
+		<div class="panel-body">
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label">收货人：</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="realname">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label">联系电话：</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="mobile">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label">地区：</label>
+				<div class="col-sm-9">
+					<select id="sel-provance" onChange="selectCity();"
+						class="pull-left form-control"
+						style="width: 30%; margin-right: 5%;">
+						<option value="" selected="true">省/直辖市</option>
+					</select> <select id="sel-city" onChange="selectcounty()"
+						class="pull-left form-control"
+						style="width: 30%; margin-right: 5%;">
+						<option value="" selected="true">请选择</option>
+					</select> <select id="sel-area" class="pull-left form-control"
+						style="width: 30%;">
+						<option value="" selected="true">请选择</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label">详细地址：</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="address">
+				</div>
+			</div>
+			<input type="hidden" id="addressid" value="" />
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button type="button" class="btn btn-danger"> 保存</button>
+					<button type="button" class="btn btn-default">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../js/jquery-2.1.1.min.js"></script>
+	<script src="../../js/bootstrap-3.3.4.min.js"></script>
+	<script src="cascade.js"></script>
+	<script>
+		$(document).ready(function(){
+			cascdeInit('湖南省','娄底市','双峰县'); //设置默认地区
+		});
+	</script>
+</body>
+</html>
