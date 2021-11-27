@@ -1,4 +1,4 @@
-// How do I start with Node.js after I installed it? https://nodejs.org/en/docs/guides/getting-started-guide/
+// How do I start with Node.js after I installed it?: https://nodejs.org/en/docs/guides/getting-started-guide/
 
 // 启动服务命令: node quickstart.js
 // 访问服务地址：http://localhost:3000
